@@ -30,6 +30,7 @@ class ssh::server(
 
     Anchor['ssh::server::start'] ->
     Class['ssh::server::install'] ->
+    Class['ssh::server::hostkeys'] ->
     Class['ssh::server::config'] ~>
     Class['ssh::server::service'] ->
     Class['ssh::hostkeys'] ->
@@ -38,6 +39,7 @@ class ssh::server(
   } else {
     Anchor['ssh::server::start'] ->
     Class['ssh::server::install'] ->
+    Class['ssh::server::hostkeys'] ->
     Class['ssh::server::config'] ~>
     Class['ssh::server::service'] ->
     Anchor['ssh::server::end']
