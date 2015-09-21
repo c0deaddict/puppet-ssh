@@ -9,5 +9,5 @@ class ssh::server::hostkeys($hostkeys = {}) {
     default => $hiera_hostkeys,
   }
 
-  create_resources('::ssh::server::hostkey', $fin_hostkeys)
+  create_resources('::ssh::server::host_key', $fin_hostkeys)
 }
