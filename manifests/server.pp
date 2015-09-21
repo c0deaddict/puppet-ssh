@@ -16,6 +16,7 @@ class ssh::server(
   $merged_options = merge($ssh::params::sshd_default_options, $fin_options)
 
   include ssh::server::install
+  include ssh::server::hostkeys
   include ssh::server::config
   include ssh::server::service
 
